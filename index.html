@@ -192,7 +192,14 @@
 .reviews-score {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 16px;
+}
+@media (max-width: 768px) {
+    .reviews-score {
+        flex-direction: column;
+        gap: 8px;
+    }
 }
 .reviews-score-number {
     font-size: 3.5rem;
@@ -328,7 +335,7 @@
                 <span class="material-symbols-outlined">workspace_premium</span>
             </div>
             <h3 class="diferencial-title">30 Anos de Tradição</h3>
-            <p class="diferencial-text">Tradição de confiança na Zona Oeste. Três décadas entregando soluções honestas e precisas.</p>
+            <p class="diferencial-text">Tradição de confiança em São Paulo. Três décadas entregando soluções honestas e precisas.</p>
         </article>
         <!-- Card 2 -->
         <article class="diferencial-card">
@@ -361,14 +368,18 @@
 <section class="reviews-section" id="avaliacoes">
     <div class="reviews-summary">
         <div class="reviews-score">
-            <span class="reviews-score-number">4.8</span>
-            <div class="reviews-score-details">
+            <span class="reviews-score-number" id="rating-counter">0.0</span>
+            <div class="reviews-score-details flex flex-col items-center sm:items-start gap-2">
                 <div class="reviews-stars">
                     <span class="material-symbols-outlined">star</span>
                     <span class="material-symbols-outlined">star</span>
                     <span class="material-symbols-outlined">star</span>
                     <span class="material-symbols-outlined">star</span>
                     <span class="material-symbols-outlined">star_half</span>
+                </div>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/50 shadow-inner mt-1">
+                    <span class="material-symbols-outlined text-green-500 text-[16px]">verified</span>
+                    <span class="text-[11px] sm:text-xs font-semibold text-slate-300">Com base em <strong class="text-white">+ de 170 avaliações</strong></span>
                 </div>
             </div>
         </div>
@@ -539,30 +550,12 @@
 <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] -z-10"></div>
 <div class="max-w-7xl mx-auto flex flex-col gap-10">
 <div class="text-center mb-4">
-<h3 class="text-secondary font-bold text-sm tracking-widest uppercase mb-2">Soluções Premium</h3>
-<h2 class="text-3xl md:text-4xl font-bold text-white">Domínio Técnico Total</h2>
+<h3 class="text-secondary font-bold text-sm tracking-widest uppercase mb-2">Todos os dias</h3>
+<h2 class="text-3xl md:text-4xl font-bold text-white">Nossos Serviços</h2>
+<p class="text-xl mt-6">Temos o serviço que você precisa todos os dias da semana! De aberturas, instalações.</p>
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-<!-- Card 1: Automotivo -->
-<div class="group relative overflow-hidden rounded-2xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-xl p-1 shadow-xl hover:border-secondary/50 transition-colors flex flex-col">
-<div class="flex flex-col sm:flex-row lg:flex-col h-full">
-<div class="w-full sm:w-1/3 lg:w-full h-48 lg:h-64 relative overflow-hidden rounded-xl shrink-0">
-<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Luxury car door handle close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_Bg879cnUyfqztqlZLkXmw5jlHbsN89sZRyg_JrrA8KgwdjgFnucs2SGF8dtRrAjJwM7RBscLfQ2XEZYE-Sng6hDqGNO7mg5_VXRU-JiD7mdf16NLYyxRPIV_ToyD2PCzLJuPbj7smufMpVpI5WND3aXOpZoleDJvbsjAL06x1PXutf2K4jKhlWiOx7vnNYaiyrjQuvSHURIT0kYGiFKCpxZHe7SFQG_I2mzgEUDMmWaktkVvwgCwr5zdQdzUH0120BaTenOSPqM"/>
-</div>
-<div class="p-6 lg:p-8 flex flex-col justify-center lg:justify-start flex-1">
-<div class="flex items-center gap-3 mb-4 lg:mb-6">
-<span class="p-3 rounded-xl bg-primary/20 text-secondary">
-<span class="material-symbols-outlined text-2xl">directions_car</span>
-</span>
-<h3 class="text-xl lg:text-2xl font-bold text-white">SOS Automotivo</h3>
-</div>
-<p class="text-slate-400 text-sm lg:text-base mb-6 flex-1">Especialistas em BMW, Audi, Porsche e Land Rover. Codificação de chaves presenciais e abertura técnica sem danos à lataria ou vidros.</p>
-<a class="text-secondary text-sm lg:text-base font-bold flex items-center gap-1 group-hover:gap-2 transition-all mt-auto" href="#">
-                            Solicitar Socorro <span class="material-symbols-outlined text-sm lg:text-base">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
+
 <!-- Card 2: Residencial -->
 <div class="group relative overflow-hidden rounded-2xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-xl p-1 shadow-xl hover:border-secondary/50 transition-colors flex flex-col">
 <div class="flex flex-col sm:flex-row lg:flex-col h-full">
@@ -571,12 +564,10 @@
 </div>
 <div class="p-6 lg:p-8 flex flex-col justify-center lg:justify-start flex-1">
 <div class="flex items-center gap-3 mb-4 lg:mb-6">
-<span class="p-3 rounded-xl bg-primary/20 text-secondary">
-<span class="material-symbols-outlined text-2xl">home_app_logo</span>
-</span>
-<h3 class="text-xl lg:text-2xl font-bold text-white">SOS Residencial</h3>
+
+<h3 class="text-2xl  lg:text-3xl font-bold text-secondary">Abertura de Portas</h3>
 </div>
-<p class="text-slate-400 text-sm lg:text-base mb-6 flex-1">Instalação e desbloqueio de fechaduras digitais (Samsung, Yale) e convencionais de alta segurança. Agilidade e discrição.</p>
+<p class="text-white text-md lg:text-base mb-6 flex-1">Perdeu a chave ou a fechadura travou? Fazemos aberturas emergenciais de residências, comércios e condomínios.</p>
 <a class="text-secondary text-sm lg:text-base font-bold flex items-center gap-1 group-hover:gap-2 transition-all mt-auto" href="#">
                             Chamar Técnico <span class="material-symbols-outlined text-sm lg:text-base">arrow_forward</span>
 </a>
@@ -591,53 +582,176 @@
 </div>
 <div class="p-6 lg:p-8 flex flex-col justify-center lg:justify-start flex-1">
 <div class="flex items-center gap-3 mb-4 lg:mb-6">
-<span class="p-3 rounded-xl bg-primary/20 text-secondary">
-<span class="material-symbols-outlined text-2xl">domain</span>
-</span>
-<h3 class="text-xl lg:text-2xl font-bold text-white">SOS Comercial &amp; Cofres</h3>
+
+<h3 class="text-2xl  lg:text-3xl font-bold text-secondary">Abertura de Cofres</h3>
 </div>
-<p class="text-slate-400 text-sm lg:text-base mb-6 flex-1">Abertura técnica para empresas, cofres digitais e mecânicos. Manutenção em portas comerciais, blindadas e sistemas de pânico.</p>
+<p class="text-white text-md lg:text-base mb-6 flex-1">Realizamos aberturas técnicas de cofres digitais e mecânicos, além de manutenção em portas comerciais e blindadas.</p>
 <a class="text-secondary text-sm lg:text-base font-bold flex items-center gap-1 group-hover:gap-2 transition-all mt-auto" href="#">
                             Falar com Perito <span class="material-symbols-outlined text-sm lg:text-base">arrow_forward</span>
 </a>
 </div>
 </div>
 </div>
+<!-- Card 4: Troca e Instalação de Fechaduras -->
+<div class="group relative overflow-hidden rounded-2xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-xl p-1 shadow-xl hover:border-secondary/50 transition-colors flex flex-col">
+<div class="flex flex-col sm:flex-row lg:flex-col h-full">
+<div class="w-full sm:w-1/3 lg:w-full h-48 lg:h-64 relative overflow-hidden rounded-xl shrink-0">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Instalação de Fechaduras" src="./assets/Instalacao-de-Fechaduras.webp" onerror="this.src='./assets/fechaduraDigital.jpg'"/>
+</div>
+<div class="p-6 lg:p-8 flex flex-col justify-center lg:justify-start flex-1">
+<div class="flex items-center gap-3 mb-4 lg:mb-6">
+
+<h3 class="text-2xl  lg:text-3xl font-bold text-secondary">Troca e Instalação de Fechaduras</h3>
+</div>
+<p class="text-white text-md lg:text-base mb-6 flex-1">Trabalhamos com Fechaduras Tetra, Multiponto, digitais e comuns.</p>
+<a class="text-secondary text-sm lg:text-base font-bold flex items-center gap-1 group-hover:gap-2 transition-all mt-auto" href="#">
+                            Solicitar Serviço <span class="material-symbols-outlined text-sm lg:text-base">arrow_forward</span>
+</a>
 </div>
 </div>
-<!-- Essential Services Grid -->
-<div class="max-w-7xl mx-auto mt-12 lg:mt-20">
-<div class="text-center mb-8">
-<h3 class="text-secondary font-bold text-sm tracking-widest uppercase mb-2">Soluções Rápidas</h3>
-<h2 class="text-2xl lg:text-3xl font-bold text-white">Serviços do Dia a Dia</h2>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-<div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-800/20 border border-slate-700/50 hover:bg-slate-800/40 transition-colors">
-<span class="p-2 rounded-lg bg-slate-800 text-primary shrink-0"><span class="material-symbols-outlined">key</span></span>
-<div>
-<h4 class="text-white font-bold text-sm">Troca de Segredo</h4>
-<p class="text-slate-400 text-xs mt-1">Cilindros Yale a multiponto</p>
+<!-- Card 5: Abertura de Carros -->
+<div class="group relative overflow-hidden rounded-2xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-xl p-1 shadow-xl hover:border-secondary/50 transition-colors flex flex-col">
+<div class="flex flex-col sm:flex-row lg:flex-col h-full">
+<div class="w-full sm:w-1/3 lg:w-full h-48 lg:h-64 relative overflow-hidden rounded-xl shrink-0">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Abertura Automotiva" src="./assets/Abertura-Automotiva.webp" onerror="this.src='./assets/fechaduraDigital.jpg'"/>
 </div>
+<div class="p-6 lg:p-8 flex flex-col justify-center lg:justify-start flex-1">
+<div class="flex items-center gap-3 mb-4 lg:mb-6">
+
+<h3 class="text-2xl  lg:text-3xl font-bold text-secondary">Abertura de Carros</h3>
 </div>
-<div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-800/20 border border-slate-700/50 hover:bg-slate-800/40 transition-colors">
-<span class="p-2 rounded-lg bg-slate-800 text-primary shrink-0"><span class="material-symbols-outlined">content_copy</span></span>
-<div>
-<h4 class="text-white font-bold text-sm">Cópias e Codificação</h4>
-<p class="text-slate-400 text-xs mt-1">Residenciais e automotivas</p>
+<p class="text-white text-md lg:text-base mb-6 flex-1">Fazemos aberturas rápidas para veículos nacionais e importados.</p>
+<a class="text-secondary text-sm lg:text-base font-bold flex items-center gap-1 group-hover:gap-2 transition-all mt-auto" href="#">
+                            Solicitar Socorro <span class="material-symbols-outlined text-sm lg:text-base">arrow_forward</span>
+</a>
 </div>
 </div>
-<div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-800/20 border border-slate-700/50 hover:bg-slate-800/40 transition-colors">
-<span class="p-2 rounded-lg bg-slate-800 text-primary shrink-0"><span class="material-symbols-outlined">build</span></span>
-<div>
-<h4 class="text-white font-bold text-sm">Conserto e Manutenção</h4>
-<p class="text-slate-400 text-xs mt-1">Cilindros e fechaduras</p>
+</div>
+<!-- Card 6: Instalação de Fechaduras Eletrônicas e Digitais -->
+<div class="group relative overflow-hidden rounded-2xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-xl p-1 shadow-xl hover:border-secondary/50 transition-colors flex flex-col">
+<div class="flex flex-col sm:flex-row lg:flex-col h-full">
+<div class="w-full sm:w-1/3 lg:w-full h-48 lg:h-64 relative overflow-hidden rounded-xl shrink-0">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Instalação de Fechaduras Eletrônicas" src="./assets/Instalacao-de-Fechaduras-Eletronicas-e-Digitais-1.webp" onerror="this.src='./assets/fechaduraDigital.jpg'"/>
+</div>
+<div class="p-6 lg:p-8 flex flex-col justify-center lg:justify-start flex-1">
+<div class="flex items-center gap-3 mb-4 lg:mb-6">
+
+<h3 class="text-2xl  lg:text-3xl font-bold text-secondary">Instalação de Fechaduras Digitais</h3>
+</div>
+<p class="text-white text-md lg:text-base mb-6 flex-1">Instalação profissional de fechaduras eletrônicas e digitais. Garantimos segurança, praticidade e acabamento perfeito em qualquer modelo ou marca.</p>
+<a class="text-secondary text-sm lg:text-base font-bold flex items-center gap-1 group-hover:gap-2 transition-all mt-auto" href="#">
+                            Solicitar Serviço <span class="material-symbols-outlined text-sm lg:text-base">arrow_forward</span>
+</a>
 </div>
 </div>
-<div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-800/20 border border-slate-700/50 hover:bg-slate-800/40 transition-colors">
-<span class="p-2 rounded-lg bg-slate-800 text-primary shrink-0"><span class="material-symbols-outlined">door_front</span></span>
-<div>
-<h4 class="text-white font-bold text-sm">Portas Blindadas</h4>
-<p class="text-slate-400 text-xs mt-1">Abertura técnica</p>
+</div>
+<!-- Card 7: Troca de Miolo/Segredo de Fechaduras -->
+<div class="group relative overflow-hidden rounded-2xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-xl p-1 shadow-xl hover:border-secondary/50 transition-colors flex flex-col">
+<div class="flex flex-col sm:flex-row lg:flex-col h-full">
+<div class="w-full sm:w-1/3 lg:w-full h-48 lg:h-64 relative overflow-hidden rounded-xl shrink-0">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Troca de miolo" src="./assets/Troca-de-miolo.webp" onerror="this.src='./assets/fechaduraDigital.jpg'"/>
+</div>
+<div class="p-6 lg:p-8 flex flex-col justify-center lg:justify-start flex-1">
+<div class="flex items-center gap-3 mb-4 lg:mb-6">
+
+<h3 class="text-2xl  lg:text-3xl font-bold text-secondary">Troca de Miolo/Segredo</h3>
+</div>
+<p class="text-white text-md lg:text-base mb-6 flex-1">Precisa trocar o acesso sem trocar a fechadura? Realizamos a troca do miolo/segredo de fechaduras.</p>
+<a class="text-secondary text-sm lg:text-base font-bold flex items-center gap-1 group-hover:gap-2 transition-all mt-auto" href="#">
+                            Solicitar Serviço <span class="material-symbols-outlined text-sm lg:text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 8: Instalação de Olho Mágico -->
+<div class="group relative overflow-hidden rounded-2xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-xl p-1 shadow-xl hover:border-secondary/50 transition-colors flex flex-col">
+<div class="flex flex-col sm:flex-row lg:flex-col h-full">
+<div class="w-full sm:w-1/3 lg:w-full h-48 lg:h-64 relative overflow-hidden rounded-xl shrink-0">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Instalação de Olho Mágico" src="./assets/Instalacao-de-Olho-Magico.webp" onerror="this.src='./assets/fechaduraDigital.jpg'"/>
+</div>
+<div class="p-6 lg:p-8 flex flex-col justify-center lg:justify-start flex-1">
+<div class="flex items-center gap-3 mb-4 lg:mb-6">
+
+<h3 class="text-2xl  lg:text-3xl font-bold text-secondary">Instalação de Olho Mágico</h3>
+</div>
+<p class="text-white text-md lg:text-base mb-6 flex-1">Evite situações indesejadas. Fazemos a instalação de olho mágico para a sua segurança e privacidade.</p>
+<a class="text-secondary text-sm lg:text-base font-bold flex items-center gap-1 group-hover:gap-2 transition-all mt-auto" href="#">
+                            Solicitar Serviço <span class="material-symbols-outlined text-sm lg:text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 9: Instalação de Fechaduras em Portas de Vidro -->
+<div class="group relative overflow-hidden rounded-2xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-xl p-1 shadow-xl hover:border-secondary/50 transition-colors flex flex-col">
+<div class="flex flex-col sm:flex-row lg:flex-col h-full">
+<div class="w-full sm:w-1/3 lg:w-full h-48 lg:h-64 relative overflow-hidden rounded-xl shrink-0">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Instalação de Fechaduras em Portas de Vidro" src="./assets/Abertura-de-Portas-de-Vidro.webp" onerror="this.src='./assets/fechaduraDigital.jpg'"/>
+</div>
+<div class="p-6 lg:p-8 flex flex-col justify-center lg:justify-start flex-1">
+<div class="flex items-center gap-3 mb-4 lg:mb-6">
+
+<h3 class="text-2xl  lg:text-3xl font-bold text-secondary">Instalação em Portas de Vidro</h3>
+</div>
+<p class="text-white text-md lg:text-base mb-6 flex-1">Instalamos fechaduras mecanicas(simples), multiponto e digital em portas de vidro. Serviço com total segurança por profissional.</p>
+<a class="text-secondary text-sm lg:text-base font-bold flex items-center gap-1 group-hover:gap-2 transition-all mt-auto" href="#">
+                            Solicitar Serviço <span class="material-symbols-outlined text-sm lg:text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 10: Aberturas Blindadas -->
+<div class="group relative overflow-hidden rounded-2xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-xl p-1 shadow-xl hover:border-secondary/50 transition-colors flex flex-col">
+<div class="flex flex-col sm:flex-row lg:flex-col h-full">
+<div class="w-full sm:w-1/3 lg:w-full h-48 lg:h-64 relative overflow-hidden rounded-xl shrink-0">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Aberturas Blindadas" src="./assets/Abertura-de-Portas-Blindadas.webp" onerror="this.src='./assets/fechaduraDigital.jpg'"/>
+</div>
+<div class="p-6 lg:p-8 flex flex-col justify-center lg:justify-start flex-1">
+<div class="flex items-center gap-3 mb-4 lg:mb-6">
+
+<h3 class="text-2xl  lg:text-3xl font-bold text-secondary">Aberturas Blindadas</h3>
+</div>
+<p class="text-white text-md lg:text-base mb-6 flex-1">Precisa de uma abertura segura e profissional? Sua segurança é muito importante para nós.</p>
+<a class="text-secondary text-sm lg:text-base font-bold flex items-center gap-1 group-hover:gap-2 transition-all mt-auto" href="#">
+                            Solicitar Serviço <span class="material-symbols-outlined text-sm lg:text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 11: Controle de Portões -->
+<div class="group relative overflow-hidden rounded-2xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-xl p-1 shadow-xl hover:border-secondary/50 transition-colors flex flex-col">
+<div class="flex flex-col sm:flex-row lg:flex-col h-full">
+<div class="w-full sm:w-1/3 lg:w-full h-48 lg:h-64 relative overflow-hidden rounded-xl shrink-0">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Controle de Portões" src="./assets/Controle-de-portoes.webp" onerror="this.src='./assets/fechaduraDigital.jpg'"/>
+</div>
+<div class="p-6 lg:p-8 flex flex-col justify-center lg:justify-start flex-1">
+<div class="flex items-center gap-3 mb-4 lg:mb-6">
+
+<h3 class="text-2xl  lg:text-3xl font-bold text-secondary">Controle de Portões</h3>
+</div>
+<p class="text-white text-md lg:text-base mb-6 flex-1">O controle do seu portões deu defeito? Fazemos a manutenção, confecção e cópia de controle para portões eletrônicos residenciais, comerciais e de condominios.</p>
+<a class="text-secondary text-sm lg:text-base font-bold flex items-center gap-1 group-hover:gap-2 transition-all mt-auto" href="#">
+                            Solicitar Serviço <span class="material-symbols-outlined text-sm lg:text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 12: Confecção de Carimbos -->
+<div class="group relative overflow-hidden rounded-2xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-xl p-1 shadow-xl hover:border-secondary/50 transition-colors flex flex-col">
+<div class="flex flex-col sm:flex-row lg:flex-col h-full">
+<div class="w-full sm:w-1/3 lg:w-full h-48 lg:h-64 relative overflow-hidden rounded-xl shrink-0">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Confecção de Carimbos" src="./assets/carimbo.webp" onerror="this.src='./assets/fechaduraDigital.jpg'"/>
+</div>
+<div class="p-6 lg:p-8 flex flex-col justify-center lg:justify-start flex-1">
+<div class="flex items-center gap-3 mb-4 lg:mb-6">
+
+<h3 class="text-2xl  lg:text-3xl font-bold text-secondary">Confecção de Carimbos</h3>
+</div>
+<p class="text-white text-md lg:text-base mb-6 flex-1">Fabricamos carimbos automáticos e manuais sob medida. Qualidade e rapidez para atender empresas e profissionais com diversos modelos.</p>
+<a class="text-secondary text-sm lg:text-base font-bold flex items-center gap-1 group-hover:gap-2 transition-all mt-auto" href="#">
+                            Solicitar Serviço <span class="material-symbols-outlined text-sm lg:text-base">arrow_forward</span>
+</a>
+</div>
 </div>
 </div>
 </div>
@@ -706,54 +820,109 @@
 </section>
 
 <!-- Coverage & Contact -->
-<section class="py-16 lg:py-24 px-4 bg-background-dark" id="contato">
-<div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
+<section class="py-16 lg:py-24 px-0 sm:px-4 bg-background-dark overflow-hidden" id="contato">
+<style>
+  details[open] summary ~ * {
+    animation: accordionSlide 0.3s ease-out forwards;
+  }
+  @keyframes accordionSlide {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  details summary:hover {
+    filter: brightness(1.1);
+  }
+</style>
+<div class="max-w-4xl mx-auto flex flex-col gap-10 items-center">
 
-<!-- Left Column: Information Panel -->
-<div class="w-full lg:w-1/3 flex flex-col gap-8 order-2 lg:order-1">
-    <div>
-        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Área de Cobertura</h2>
-        <p class="text-slate-400 text-base lg:text-lg">Base estratégica na Pompeia. Atendimento rápido em até 30min para Zona Oeste e Região Central.</p>
+    <!-- Title and Subtitle -->
+    <div class="text-center w-full px-4 sm:px-0">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-2 drop-shadow-md">Área de Cobertura</h2>
+        <h3 class="text-secondary font-bold text-xl lg:text-2xl mt-4">Segunda à Segunda</h3>
+        <div class="flex flex-wrap justify-center gap-3 mt-6">
+            <span class="bg-secondary/20 border border-secondary/50 text-secondary px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 shadow-lg shadow-secondary/10">
+                <span class="material-symbols-outlined text-[20px]">schedule</span>
+                Seg a Sáb: 9h às 21h
+            </span>
+            <span class="bg-slate-800/80 border border-slate-600/50 text-slate-200 px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 shadow-lg">
+                <span class="material-symbols-outlined text-[20px]">event</span>
+                Dom e Feriados: 9h às 18h
+            </span>
+        </div>
     </div>
 
-    <div class="flex flex-col gap-4 bg-slate-800/20 p-6 rounded-2xl border border-slate-700/50 flex-1 h-full">
-        <h4 class="text-white font-bold text-lg mb-2">Bairros com Base Rápida</h4>
-        
-        <ul class="flex flex-col gap-3 text-slate-300 text-sm">
-            <li class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-primary text-[18px]">share_location</span>
-                Perdizes & Pompeia
-            </li>
-            <li class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-primary text-[18px]">share_location</span>
-                Lapa & Vila Romana
-            </li>
-            <li class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-primary text-[18px]">share_location</span>
-                Água Branca
-            </li>
-            <li class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-primary text-[18px]">share_location</span>
-                Barra Funda
-            </li>
-        </ul>
-        
-        <hr class="border-slate-700/50 mt-auto my-6" />
+    <!-- Accordions -->
+    <div class="w-full flex flex-col gap-3 px-4 sm:px-0">
+        <details class="group bg-slate-900/80 border border-slate-600/50 rounded-lg shadow-lg overflow-hidden" open>
+            <summary class="flex items-center gap-4 cursor-pointer bg-gradient-to-b from-slate-500 to-slate-800 text-white font-bold px-6 py-4 text-lg md:text-xl list-none [&::-webkit-details-marker]:hidden transition-all">
+                <span class="text-2xl font-black group-open:hidden w-4 text-center leading-none">+</span>
+                <span class="text-2xl font-black hidden group-open:block w-4 text-center leading-none">-</span>
+                Zona Norte
+            </summary>
+            <div class="p-6 text-slate-200 leading-relaxed text-sm md:text-base bg-[#1a1c23] border-t border-slate-600/50">
+                Santana, Casa Verde, Cachoeirinha, Limão, Freguesia do Ó, Imirim, Vila Guilherme, Agua Fria, Jardim São Paulo, Tucuruvi, Mandaqui, Vila Gustavo, Lauzane Paulista, Tremembe e mais…
+            </div>
+        </details>
 
-        <h4 class="text-white font-bold text-lg mb-2">Onde nos Encontrar</h4>
-        <p class="text-slate-400 text-sm flex items-start gap-2">
-            <span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">store</span>
-            <span>Rua Carlos Vicari, 155 <br/> <em class="text-slate-500">Loja Interna (Supermercado Sonda)</em><br/> <em class="text-slate-500">Estacionamento Coberto</em><br/> Pompeia, São Paulo - SP</span>
+        <details class="group bg-slate-900/80 border border-slate-600/50 rounded-lg shadow-lg overflow-hidden">
+            <summary class="flex items-center gap-4 cursor-pointer bg-gradient-to-b from-slate-500 to-slate-800 text-white font-bold px-6 py-4 text-lg md:text-xl list-none [&::-webkit-details-marker]:hidden transition-all">
+                <span class="text-2xl font-black group-open:hidden w-4 text-center leading-none">+</span>
+                <span class="text-2xl font-black hidden group-open:block w-4 text-center leading-none">-</span>
+                Centro de São Paulo
+            </summary>
+            <div class="p-6 text-slate-200 leading-relaxed text-sm md:text-base bg-[#1a1c23] border-t border-slate-600/50">
+                Consolação, Paulista, Liberdade, Brás, Barra Funda, Bom Retiro, Bela Vista, Santa Cecilia, Luz, Vila Buarque, Higienópolis, República, Canindé e mais…
+            </div>
+        </details>
+
+        <details class="group bg-slate-900/80 border border-slate-600/50 rounded-lg shadow-lg overflow-hidden">
+            <summary class="flex items-center gap-4 cursor-pointer bg-gradient-to-b from-slate-500 to-slate-800 text-white font-bold px-6 py-4 text-lg md:text-xl list-none [&::-webkit-details-marker]:hidden transition-all">
+                <span class="text-2xl font-black group-open:hidden w-4 text-center leading-none">+</span>
+                <span class="text-2xl font-black hidden group-open:block w-4 text-center leading-none">-</span>
+                Zona Oeste
+            </summary>
+            <div class="p-6 text-slate-200 leading-relaxed text-sm md:text-base bg-[#1a1c23] border-t border-slate-600/50">
+                Perdizes, Lapa, Pinheiros, Alto da Lapa, Pompeia, Pacaembu, Alto de Pinheiros, Vila Madalena, Vila Romana, Vila Anastácio, Água Branca, Vila Leopoldina, Sumaré e mais…
+            </div>
+        </details>
+
+        <details class="group bg-slate-900/80 border border-slate-600/50 rounded-lg shadow-lg overflow-hidden">
+            <summary class="flex items-center gap-4 cursor-pointer bg-gradient-to-b from-slate-500 to-slate-800 text-white font-bold px-6 py-4 text-lg md:text-xl list-none [&::-webkit-details-marker]:hidden transition-all">
+                <span class="text-2xl font-black group-open:hidden w-4 text-center leading-none">+</span>
+                <span class="text-2xl font-black hidden group-open:block w-4 text-center leading-none">-</span>
+                Zona Sul
+            </summary>
+            <div class="p-6 text-slate-200 leading-relaxed text-sm md:text-base bg-[#1a1c23] border-t border-slate-600/50">
+                Vila Mariana, Jardim Paulista, Jardim, Itaim Bibi, Brooklin, Moema, Ibirapuera, Campo Belo, Vergueiro, Vila Olímpia, Santa Cruz, Ipiranga, Itaim Bibi, Paraíso, Vergueiro, Vila Clementino, Vila nova Conceição
+            </div>
+        </details>
+
+        <details class="group bg-slate-900/80 border border-slate-600/50 rounded-lg shadow-lg overflow-hidden">
+            <summary class="flex items-center gap-4 cursor-pointer bg-gradient-to-b from-slate-500 to-slate-800 text-white font-bold px-6 py-4 text-lg md:text-xl list-none [&::-webkit-details-marker]:hidden transition-all">
+                <span class="text-2xl font-black group-open:hidden w-4 text-center leading-none">+</span>
+                <span class="text-2xl font-black hidden group-open:block w-4 text-center leading-none">-</span>
+                Zona Leste
+            </summary>
+            <div class="p-6 text-slate-200 leading-relaxed text-sm md:text-base bg-[#1a1c23] border-t border-slate-600/50">
+                Carrão, Mooca, Saúde, Tatuapé, Belém, Penha, Bresser e mais…
+            </div>
+        </details>
+    </div>
+
+    <!-- Onde nos Encontrar + Map (Map last) -->
+    <div class="w-full mt-10 flex flex-col items-center text-center">
+        <h4 class="text-white font-bold text-3xl mb-6 px-4">Onde nos Encontrar</h4>
+        <p class="text-slate-300 text-lg mb-10 flex flex-col items-center gap-3 px-4">
+            <span class="material-symbols-outlined text-secondary text-4xl drop-shadow-lg">store</span>
+            <span>Rua Carlos Vicari, 155 <br/> <em class="text-slate-400 text-base">Loja Interna (Supermercado Sonda)</em><br/> <em class="text-slate-400 text-base">Estacionamento Coberto</em><br/> <strong class="text-white">Pompeia, São Paulo - SP</strong></span>
         </p>
+        
+        <div class="w-full sm:px-4">
+            <div class="w-full h-[350px] sm:h-[450px] rounded-3xl overflow-hidden shadow-2xl border border-slate-700/70 p-2 sm:p-2 bg-slate-800/40 backdrop-blur-sm">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.2117565147814!2d-46.6853!3d-23.5249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMxJzI5LjYiUyA0NsKwNDEnMDcuMSJX!5e0!3m2!1spt-BR!2sbr!4v1614000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" class="rounded-2xl border-none" style="min-height: 350px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
     </div>
-</div>
-
-<!-- Right Column: Interactive Map -->
-<div class="w-full lg:w-2/3 order-1 lg:order-2">
-    <div class="w-full h-[400px] lg:h-[100%] min-h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-slate-700/70 p-2 bg-slate-800/40 backdrop-blur-sm">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.2117565147814!2d-46.6853!3d-23.5249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMxJzI5LjYiUyA0NsKwNDEnMDcuMSJX!5e0!3m2!1spt-BR!2sbr!4v1614000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" class="rounded-xl border border-slate-700/40" style="min-height: 380px;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-</div>
 
 </div>
 </section>
@@ -828,4 +997,92 @@
 </div>
 </div>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // --- 1. RATING COUNTER ANIMATION ---
+    const counter = document.getElementById("rating-counter");
+    if (counter) {
+        let current = 0.0;
+        const target = 4.8;
+        const step = 0.1;
+        const duration = 1500; 
+        const steps = target / step;
+        const intervalTime = duration / steps;
+        
+        const counterObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    counter.innerText = current.toFixed(1);
+                }, intervalTime);
+                counterObserver.disconnect();
+            }
+        }, { threshold: 0.5 });
+        counterObserver.observe(counter);
+    }
+
+    // --- 2. GLOBAL SCROLL ANIMATIONS ---
+    // Inject CSS for animations
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .scroll-reveal-scale {
+            opacity: 0;
+            transform: scale(0.95) translateY(20px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .scroll-reveal-scale.active {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Select elements
+    const fadeElements = document.querySelectorAll('section h2, section h3, .diferencial-card, .reviews-text, .reviews-score');
+    const scaleElements = document.querySelectorAll('#especialidades .group, section.bg-surface-dark .group, #contato details, .flex-wrap img');
+
+    // Apply classes and staggering
+    fadeElements.forEach(el => el.classList.add('scroll-reveal'));
+    scaleElements.forEach(el => {
+        el.classList.add('scroll-reveal-scale');
+        if (el.parentElement && el.parentElement.classList.contains('grid')) {
+            const index = Array.from(el.parentElement.children).indexOf(el);
+            el.style.transitionDelay = `${(index % 4) * 150}ms`;
+        } else if (el.parentElement && el.parentElement.classList.contains('flex-wrap')) {
+            const index = Array.from(el.parentElement.children).indexOf(el);
+            el.style.transitionDelay = `${(index % 5) * 100}ms`;
+        } else if (el.tagName.toLowerCase() === 'details') {
+            const index = Array.from(el.parentElement.children).indexOf(el);
+            el.style.transitionDelay = `${(index % 5) * 100}ms`;
+        }
+    });
+
+    // Observer setup
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                scrollObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+    document.querySelectorAll('.scroll-reveal, .scroll-reveal-scale').forEach(el => {
+        scrollObserver.observe(el);
+    });
+});
+</script>
 </body></html>
